@@ -25,7 +25,7 @@ namespace WindowsInfo.Net
                 sw.WriteLine("计算机名：" + systemInfo.GetComputerName());
                 sw.WriteLine("登录用户名：" + systemInfo.GetUserName());
                 sw.WriteLine("操作系统类型：" + systemInfo.GetSystemType());
-                sw.WriteLine("\n\n");
+                sw.WriteLine("\n");
 
                 // 硬件信息
                 sw.WriteLine("---------  硬件信息  ---------");
@@ -54,7 +54,7 @@ namespace WindowsInfo.Net
 
                 sw.WriteLine("显卡PNPDeviceID：" + hardwareInfo.GetVideoPNPID());
                 sw.WriteLine("声卡PNPDeviceID：" + hardwareInfo.GetSoundPNPID());
-                sw.WriteLine("\n\n");
+                sw.WriteLine("\n");
 
                 // 网络信息
                 sw.WriteLine("---------  网络信息  ---------");
@@ -70,7 +70,7 @@ namespace WindowsInfo.Net
                 {
                     sw.WriteLine("外网ip地址：" + item);
                 }
-                sw.WriteLine("\n\n");
+                sw.WriteLine("\n");
 
                 // 软件信息
                 sw.WriteLine("---------  软件信息  ---------");
@@ -80,15 +80,14 @@ namespace WindowsInfo.Net
                 {
                     sw.WriteLine(item.Key + "\t" + item.Value);
                 }
-                sw.WriteLine("\n\n");
-
-
-                Console.WriteLine("信息文件保存在：" + Environment.CurrentDirectory + @"\" + filename);
-                Console.ReadKey();
+                sw.WriteLine("\n");
 
                 sw.Flush();
                 sw.Close();
                 fs.Close();
+
+                Console.WriteLine("信息文件保存在：" + Environment.CurrentDirectory + @"\" + filename);
+                Console.ReadKey();
             }
             catch (Exception e1)
             {
