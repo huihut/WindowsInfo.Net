@@ -101,7 +101,7 @@ namespace WindowsInfo.Net
                 return "";
             }
         }
-        //获取硬盘序列号
+        //获取物理硬盘序列号
         public string GetHardDiskSerialNumber()
         {
             try
@@ -158,7 +158,7 @@ namespace WindowsInfo.Net
 
 
         /// <summary>
-        /// 获取硬盘序列号
+        /// 获取磁盘序列号
         /// </summary>
         public string GetDiskSerialNumber()
         {
@@ -172,17 +172,6 @@ namespace WindowsInfo.Net
                 break;//这名话解决有多个物理盘时产生的问题，只取第一个物理硬盘
             }
             return HDid;
-
-
-            /*ManagementClass mc = new ManagementClass("Win32_PhysicalMedia");
-            ManagementObjectCollection moc = mc.GetInstances();
-            string str = "";
-            foreach (ManagementObject mo in moc)
-            {
-                str = mo.Properties["SerialNumber"].Value.ToString();
-                break;
-            }
-            return str;*/
         }
 
 
